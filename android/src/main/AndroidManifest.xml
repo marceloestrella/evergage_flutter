@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+
+    package="mx.bnext.evergage_flutter">
+    <application>
+    <activity android:name="com.evergage.android.EvergageActivity"
+        android:exported="true"
+        tools:node="merge"
+        />
+    </application>
+</manifest>
