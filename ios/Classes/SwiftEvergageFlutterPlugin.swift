@@ -15,8 +15,8 @@ public class SwiftEvergageFlutterPlugin: NSObject, FlutterPlugin {
       let arguments = call.arguments as! NSDictionary
       
       let evergage = Evergage.sharedInstance()
-      
       evergage.logLevel = EVGLogLevel.all
+      
       
       switch call.method {
       case "start":

@@ -22,7 +22,6 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _evergageFlutterPlugin.start('heinekenintlamer', 'development', false);
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -59,6 +58,25 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Response on: $_platformVersion\n'),
+              ElevatedButton(
+                  onPressed: () async {
+                    String platformVersion;
+
+                    try {
+                      await _evergageFlutterPlugin.start(
+                          'heinekenintlamer', 'mexico', false);
+                      platformVersion = 'todo bien start';
+                    } on PlatformException {
+                      platformVersion = 'Failed to start.';
+                    }
+
+                    if (!mounted) return;
+
+                    setState(() {
+                      _platformVersion = platformVersion;
+                    });
+                  },
+                  child: const Text("start")),
               ElevatedButton(
                   onPressed: () async {
                     String platformVersion;
