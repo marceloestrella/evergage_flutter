@@ -118,7 +118,7 @@ class EvergageFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
     activity = binding.activity;
 
     Evergage.initialize(binding.activity.application)
-    Evergage.setLogLevel(LogLevel.ALL)
+    Evergage.setLogLevel(LogLevel.OFF)
   }
 
   override fun onDetachedFromActivityForConfigChanges() {
