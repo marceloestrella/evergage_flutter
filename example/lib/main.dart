@@ -64,7 +64,7 @@ class _MyAppState extends State<MyApp> {
 
                     try {
                       await _evergageFlutterPlugin.start(
-                          'heinekenintlamer', 'mexico', false);
+                          'heinekenintlamer', 'development', false);
                       platformVersion = 'todo bien start';
                     } on PlatformException {
                       platformVersion = 'Failed to start.';
