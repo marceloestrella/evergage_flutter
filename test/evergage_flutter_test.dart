@@ -61,7 +61,6 @@ void main() {
   });
 
   test('initialize', () async {
-    EvergageFlutter evergageFlutterPlugin = EvergageFlutter();
     MockEvergageFlutterPlatform fakePlatform = MockEvergageFlutterPlatform();
     EvergageFlutterPlatform.instance = fakePlatform;
 
