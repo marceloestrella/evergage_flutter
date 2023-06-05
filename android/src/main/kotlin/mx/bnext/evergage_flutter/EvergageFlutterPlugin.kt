@@ -10,7 +10,9 @@ import com.evergage.android.LogLevel
 import com.evergage.android.Screen
 import com.evergage.android.promote.Category
 import com.evergage.android.promote.LineItem
+import com.evergage.android.promote.Order
 import com.evergage.android.promote.Product
+import com.google.gson.Gson
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
@@ -20,8 +22,6 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
-import org.json.JSONArray;
-import org.json.JSONException;
 
 /** EvergageFlutterPlugin */
 class EvergageFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
@@ -54,6 +54,7 @@ class EvergageFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
         clientConfiguration.usePushNotifications(call.argument<Boolean>("usePushNotification")!!)
 
         evergage.start(clientConfiguration.build())
+
       }
       "setUser" -> {
         var email = call.argument<String>("email")
@@ -101,8 +102,27 @@ class EvergageFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
           contextEvergage?.addToCart(lineItm)
       }
       "purchase" -> {
+        val gson = Gson()
         val total = call.argument<Double>("total")
         val lines = call.argument<String>("lines")
+        val orderId = call.argument<String>("orderId")
+
+        val listSaleLine = gson.fromJson(lines, ListSaleLine::class.java)
+        val saleLines = listSaleLine.getList()
+        val linesEvent = ArrayList<LineItem>()
+
+        for (saleLine in saleLines) {
+          val product = Product(saleLine.getId())
+          product.name = saleLine.getName()
+          product.price = saleLine.getPrice()
+          linesEvent.add(LineItem(product, saleLine.getQuantity()))
+        }
+
+        if (screen != null)
+          screen.purchase(Order(orderId, linesEvent, total))
+        else
+          contextEvergage?.purchase(Order(orderId, linesEvent, total))
+
 
       }
       else -> result.notImplemented()

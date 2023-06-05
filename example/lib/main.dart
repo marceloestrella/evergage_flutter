@@ -68,9 +68,9 @@ class _MyAppState extends State<MyApp> {
                       platformVersion = 'todo bien start';
                     } on PlatformException {
                       platformVersion = 'Failed to start.';
+                    } catch (e) {
+                      platformVersion = e.toString();
                     }
-
-                    if (!mounted) return;
 
                     setState(() {
                       _platformVersion = platformVersion;
@@ -87,9 +87,9 @@ class _MyAppState extends State<MyApp> {
                       platformVersion = 'todo bien setUser';
                     } on PlatformException {
                       platformVersion = 'Failed to setUser.';
+                    } catch (e) {
+                      platformVersion = e.toString();
                     }
-
-                    if (!mounted) return;
 
                     setState(() {
                       _platformVersion = platformVersion;
@@ -105,6 +105,8 @@ class _MyAppState extends State<MyApp> {
                       platformVersion = 'todo bien setZipCode';
                     } on PlatformException {
                       platformVersion = 'Failed to setZipCode.';
+                    } catch (e) {
+                      platformVersion = e.toString();
                     }
 
                     setState(() {
@@ -124,8 +126,6 @@ class _MyAppState extends State<MyApp> {
                       platformVersion = 'Failed to viewProduct.';
                     }
 
-                    if (!mounted) return;
-
                     setState(() {
                       _platformVersion = platformVersion;
                     });
@@ -143,8 +143,6 @@ class _MyAppState extends State<MyApp> {
                       platformVersion = 'Failed to viewCategory.';
                     }
 
-                    if (!mounted) return;
-
                     setState(() {
                       _platformVersion = platformVersion;
                     });
@@ -160,9 +158,9 @@ class _MyAppState extends State<MyApp> {
                       platformVersion = 'todo bien addToCart';
                     } on PlatformException {
                       platformVersion = 'Failed to addToCart.';
+                    } catch (e) {
+                      platformVersion = e.toString();
                     }
-
-                    if (!mounted) return;
 
                     setState(() {
                       _platformVersion = platformVersion;
@@ -184,8 +182,6 @@ class _MyAppState extends State<MyApp> {
                     } on PlatformException {
                       platformVersion = 'Failed to purchase.';
                     }
-
-                    if (!mounted) return;
 
                     setState(() {
                       _platformVersion = platformVersion;
