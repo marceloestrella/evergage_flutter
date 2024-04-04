@@ -50,6 +50,12 @@ class MockEvergageFlutterPlatform
     // TODO: implement viewCategory
     throw UnimplementedError();
   }
+
+   @override
+  Future<void> login() {
+    // TODO: implement viewCategory
+    throw UnimplementedError();
+  }
 }
 
 void main() {

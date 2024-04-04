@@ -9,6 +9,7 @@ import com.evergage.android.Evergage
 import com.evergage.android.LogLevel
 import com.evergage.android.Screen
 import com.evergage.android.promote.Category
+import com.evergage.android.promote.Item
 import com.evergage.android.promote.LineItem
 import com.evergage.android.promote.Order
 import com.evergage.android.promote.Product
@@ -52,8 +53,9 @@ class EvergageFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
         clientConfiguration.account(call.argument<String>("account")!!)
         clientConfiguration.dataset(call.argument<String>("dataset")!!)
         clientConfiguration.usePushNotifications(call.argument<Boolean>("usePushNotification")!!)
-
         evergage.start(clientConfiguration.build())
+
+
 
       }
       "setUser" -> {
@@ -118,12 +120,24 @@ class EvergageFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
           linesEvent.add(LineItem(product, saleLine.getQuantity()))
         }
 
-        if (screen != null)
+        if (screen != null){
           screen.purchase(Order(orderId, linesEvent, total))
-        else
+        }
+        else{
           contextEvergage?.purchase(Order(orderId, linesEvent, total))
+        }
 
 
+
+      }
+      "login" -> {
+        if (screen != null){
+          screen.trackAction("boton login")
+          println("El evento de login fue clickeado")
+        }else{
+          contextEvergage?.trackAction("boton login")
+          println("El evento de login fue clickeado")
+        }
       }
       else -> result.notImplemented()
     }

@@ -52,4 +52,8 @@ abstract class EvergageFlutterPlatform extends PlatformInterface {
   Future<void> purchase(String orderId, String lines, double total) {
     throw UnimplementedError('purchase() has not been implemented.');
   }
+
+  Future<void> login() {
+    throw UnimplementedError('login() has not been implemented.');
+  }
 }

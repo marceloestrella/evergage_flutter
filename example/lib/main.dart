@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -22,6 +24,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    initPlatformState();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -66,10 +69,15 @@ class _MyAppState extends State<MyApp> {
                       await _evergageFlutterPlugin.start(
                           'heinekenintlamer', 'development', false);
                       platformVersion = 'todo bien start';
+                      log('todo bien start', name: 'EvergageFlutter');
                     } on PlatformException {
                       platformVersion = 'Failed to start.';
+                      log('Failed to start', name: 'EvergageFlutter');
+
                     } catch (e) {
                       platformVersion = e.toString();
+                      log('error $e', name: 'EvergageFlutter');
+
                     }
 
                     setState(() {
@@ -83,7 +91,7 @@ class _MyAppState extends State<MyApp> {
 
                     try {
                       await _evergageFlutterPlugin.setUser(
-                          '20220914', 'mjaime@bnext.mx', 'Marcelo', 'Jaime');
+                          '20220915', 'mjaime@bnext.mx', 'Marcelo', 'Jaime');
                       platformVersion = 'todo bien setUser';
                     } on PlatformException {
                       platformVersion = 'Failed to setUser.';
@@ -187,7 +195,25 @@ class _MyAppState extends State<MyApp> {
                       _platformVersion = platformVersion;
                     });
                   },
-                  child: const Text("purchase"))
+                  child: const Text("purchase")),
+            ElevatedButton(
+                  onPressed: () async {
+                    String platformVersion;
+
+                    try {
+                      await _evergageFlutterPlugin.login();
+                      platformVersion = 'todo bien login';
+                    } on PlatformException {
+                      platformVersion = 'Failed to login.';
+                    } catch (e) {
+                      platformVersion = e.toString();
+                    }
+
+                    setState(() {
+                      _platformVersion = platformVersion;
+                    });
+                  },
+                  child: const Text("login")),
             ],
           ),
         ),
