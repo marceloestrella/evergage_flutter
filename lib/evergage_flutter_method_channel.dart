@@ -58,9 +58,8 @@ class MethodChannelEvergageFlutter extends EvergageFlutterPlatform {
         'purchase', {'orderId': orderId, 'lines': lines, 'total': total});
   }
 
-   @override
+  @override
   Future<void> login() async {
-    await methodChannel.invokeMethod(
-        'login');
+    await methodChannel.invokeMethod('login', {'sessionid': '123'});
   }
 }
