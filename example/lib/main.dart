@@ -24,7 +24,6 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    initPlatformState();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -89,7 +88,7 @@ class _MyAppState extends State<MyApp> {
 
                     try {
                       await _evergageFlutterPlugin.setUser(
-                          '20220916', 'mjaime@bnext.mx', 'Marcelo', 'Jaime');
+                          '20220914', 'mjaime@bnext.mx', 'Marcelo', 'Jaime');
                       platformVersion = 'todo bien setUser';
                     } on PlatformException {
                       platformVersion = 'Failed to setUser.';
