@@ -132,9 +132,9 @@ class EvergageFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
       }
       "login" -> {
         if (screen != null){
-          screen.trackAction("boton login")
+          screen.trackAction("login")
         }else{
-          contextEvergage?.trackAction("boton login")
+          contextEvergage?.trackAction("login")
         }
       }
       else -> result.notImplemented()
