@@ -133,10 +133,8 @@ class EvergageFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
       "login" -> {
         if (screen != null){
           screen.trackAction("boton login")
-          println("El evento de login fue clickeado")
         }else{
           contextEvergage?.trackAction("boton login")
-          println("El evento de login fue clickeado")
         }
       }
       else -> result.notImplemented()
