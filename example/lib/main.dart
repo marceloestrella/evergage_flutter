@@ -72,11 +72,9 @@ class _MyAppState extends State<MyApp> {
                     } on PlatformException {
                       platformVersion = 'Failed to start.';
                       log('Failed to start', name: 'EvergageFlutter');
-
                     } catch (e) {
                       platformVersion = e.toString();
                       log('error $e', name: 'EvergageFlutter');
-
                     }
 
                     setState(() {
@@ -90,7 +88,7 @@ class _MyAppState extends State<MyApp> {
 
                     try {
                       await _evergageFlutterPlugin.setUser(
-                          '20220915', 'mjaime@bnext.mx', 'Marcelo', 'Jaime');
+                          '20220916', 'mjaime@bnext.mx', 'Marcelo', 'Jaime');
                       platformVersion = 'todo bien setUser';
                     } on PlatformException {
                       platformVersion = 'Failed to setUser.';
@@ -195,7 +193,7 @@ class _MyAppState extends State<MyApp> {
                     });
                   },
                   child: const Text("purchase")),
-            ElevatedButton(
+              ElevatedButton(
                   onPressed: () async {
                     String platformVersion;
 

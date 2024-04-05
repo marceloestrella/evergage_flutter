@@ -81,6 +81,9 @@ public class SwiftEvergageFlutterPlugin: NSObject, FlutterPlugin {
           
           evergage.globalContext?.purchase(order)
           result(nil)
+      case "login":
+          evergage.globalContext?.trackAction("login button")
+          result(nil)
       default:
           result(FlutterMethodNotImplemented)
       }
