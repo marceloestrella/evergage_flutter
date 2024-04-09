@@ -187,7 +187,26 @@ class _MyAppState extends State<MyApp> {
                       _platformVersion = platformVersion;
                     });
                   },
-                  child: const Text("purchase"))
+                  child: const Text("purchase")),
+              ElevatedButton(
+                  onPressed: () async {
+                    String platformVersion;
+
+                    try {
+                      const eventTrigger = 'goToCheckout';
+
+                      await _evergageFlutterPlugin.sendEvent(eventTrigger);
+
+                      platformVersion = 'todo bien sendEvent';
+                    } on PlatformException {
+                      platformVersion = 'Failed to sendEvent.';
+                    }
+
+                    setState(() {
+                      _platformVersion = platformVersion;
+                    });
+                  },
+                  child: const Text("send event"))
             ],
           ),
         ),

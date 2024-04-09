@@ -33,4 +33,8 @@ class EvergageFlutter {
   Future<void> purchase(String orderId, String lines, double total) {
     return EvergageFlutterPlatform.instance.purchase(orderId, lines, total);
   }
+
+   Future<void> sendEvent(String eventTrigger,) {
+    return EvergageFlutterPlatform.instance.sendEvent(eventTrigger);
+  }
 }

@@ -125,6 +125,15 @@ class EvergageFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
 
 
       }
+      "sendEvent" -> {
+        var eventTrigger = call.argument<String>("eventTrigger")
+
+        if (screen != null)
+          screen.trackAction(eventTrigger!!)
+        else
+          contextEvergage?.trackAction(eventTrigger!!)
+
+      }
       else -> result.notImplemented()
     }
   }
