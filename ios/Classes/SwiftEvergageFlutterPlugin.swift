@@ -81,6 +81,10 @@ public class SwiftEvergageFlutterPlugin: NSObject, FlutterPlugin {
           
           evergage.globalContext?.purchase(order)
           result(nil)
+      case "sendEvent":
+          let eventTrigger = arguments["eventTrigger"] as! String
+          evergage.globalContext?.trackAction(eventTrigger)
+          result(nil)
       default:
           result(FlutterMethodNotImplemented)
       }

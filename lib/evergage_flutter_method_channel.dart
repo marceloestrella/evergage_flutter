@@ -57,4 +57,10 @@ class MethodChannelEvergageFlutter extends EvergageFlutterPlatform {
     await methodChannel.invokeMethod(
         'purchase', {'orderId': orderId, 'lines': lines, 'total': total});
   }
+
+  @override
+  Future<void> sendEvent(String eventTrigger,) async {
+    await methodChannel.invokeMethod(
+        'sendEvent', {'eventTrigger': eventTrigger,});
+  }
 }

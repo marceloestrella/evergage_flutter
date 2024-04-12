@@ -50,6 +50,13 @@ class MockEvergageFlutterPlatform
     // TODO: implement viewCategory
     throw UnimplementedError();
   }
+
+  
+  @override
+  Future<void> sendEvent(String eventTrigger,) {
+    // TODO: implement viewCategory
+    throw UnimplementedError();
+  }
 }
 
 void main() {

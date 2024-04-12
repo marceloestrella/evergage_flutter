@@ -5,3 +5,7 @@
 ## 0.0.2
 
 * Bug fix con evento de purchase.
+
+## 0.0.3
+
+* Evergage SDK updated to version 1.4.0 and "sendEvent" event added
