@@ -21,8 +21,6 @@ dependencies:
     sdk: flutter
 
 
-  facebook_app_events: ^0.17.0
-
   evergage_flutter:
     # When depending on this package from a real application you should use:
     #   evergage_flutter: ^x.y.z
