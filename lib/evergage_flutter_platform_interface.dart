@@ -36,6 +36,10 @@ abstract class EvergageFlutterPlatform extends PlatformInterface {
     throw UnimplementedError('setZipCode() has not been implemented.');
   }
 
+  Future<void> setOpCo(String opCo) {
+    throw UnimplementedError('setOpCo() has not been implemented.');
+  }
+
   Future<void> viewProduct(String id, String name) {
     throw UnimplementedError('viewProduct() has not been implemented.');
   }

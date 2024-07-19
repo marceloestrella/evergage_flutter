@@ -9,3 +9,7 @@
 ## 0.0.3
 
 * Evergage SDK updated to version 1.4.0 and "sendEvent" event added
+
+## 0.0.4
+
+* A new method is added to set a user property (setOpCo)      

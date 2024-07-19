@@ -16,6 +16,10 @@ class EvergageFlutter {
     return EvergageFlutterPlatform.instance.setZipCode(zipCode);
   }
 
+   Future<void> setOpCo(String opCo) {
+    return EvergageFlutterPlatform.instance.setOpCo(opCo);
+  }
+  
   Future<void> viewProduct(String id, String name) {
     return EvergageFlutterPlatform.instance.viewProduct(id, name);
   }
