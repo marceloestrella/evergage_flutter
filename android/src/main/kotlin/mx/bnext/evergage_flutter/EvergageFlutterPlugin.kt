@@ -70,6 +70,9 @@ class EvergageFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
       "setZipCode" -> {
         evergage.setUserAttribute("zipCode",call.argument<String>("zipCode"))
       }
+      "setOpCo" -> {
+        evergage.setUserAttribute("OpCo", call.argument<String>("OpCo"))
+      }
       "viewProduct" -> {
         val product = Product(call.argument<String>("id")!!)
         product.name = call.argument<String>("name")!!
