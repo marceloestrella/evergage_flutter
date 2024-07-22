@@ -44,7 +44,7 @@ public class SwiftEvergageFlutterPlugin: NSObject, FlutterPlugin {
           evergage.setUserAttribute(arguments["zipCode"] as? String, forName: "zipCode")
           result(nil)
       case "setOpCo" :
-          evergage.setUserAttribute(arguments["OpOc"] as? String, forName: "OpOc")
+          evergage.setUserAttribute(arguments["OpCo"] as? String, forName: "OpCo")
           result(nil)
       case "viewProduct":
           let product = EVGProduct.init(id: arguments["id"] as! String)
