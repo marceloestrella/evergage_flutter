@@ -40,8 +40,8 @@ class MockEvergageFlutterPlatform
   }
 
   @override
-  Future<void> setZipCode(String zipCode) {
-    // TODO: implement setZipCode
+  Future<void> setPostalCode(String postalCode) {
+    // TODO: implement setPostalCode
     throw UnimplementedError();
   }
 
@@ -55,6 +55,12 @@ class MockEvergageFlutterPlatform
   @override
   Future<void> sendEvent(String eventTrigger,) {
     // TODO: implement viewCategory
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<void> setOpCo(String opCo) {
+    // TODO: implement setOpCo
     throw UnimplementedError();
   }
 }

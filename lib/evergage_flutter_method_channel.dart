@@ -31,8 +31,8 @@ class MethodChannelEvergageFlutter extends EvergageFlutterPlatform {
   }
 
   @override
-  Future<void> setZipCode(String zipCode) async {
-    await methodChannel.invokeMethod('setZipCode', {'zipCode': zipCode});
+  Future<void> setPostalCode(String postalCode) async {
+    await methodChannel.invokeMethod('setPostalCode', {'postalCode': postalCode});
   }
   
   @override

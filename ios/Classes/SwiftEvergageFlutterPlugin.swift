@@ -40,8 +40,8 @@ public class SwiftEvergageFlutterPlugin: NSObject, FlutterPlugin {
           }
           
           result(nil)
-      case "setZipCode":
-          evergage.setUserAttribute(arguments["zipCode"] as? String, forName: "zipCode")
+      case "setPostalCode":
+          evergage.setUserAttribute(arguments["postalCode"] as? String, forName: "postalCode")
           result(nil)
       case "setOpCo" :
           evergage.setUserAttribute(arguments["OpCo"] as? String, forName: "OpCo")

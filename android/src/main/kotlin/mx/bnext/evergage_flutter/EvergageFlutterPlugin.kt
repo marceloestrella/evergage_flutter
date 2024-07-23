@@ -67,8 +67,8 @@ class EvergageFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
         if(email != null)
           evergage.setUserAttribute("emailSHA256", sha256String(email))
       }
-      "setZipCode" -> {
-        evergage.setUserAttribute("zipCode",call.argument<String>("zipCode"))
+      "setPostalCode" -> {
+        evergage.setUserAttribute("postalCode",call.argument<String>("postalCode"))
       }
       "setOpCo" -> {
         evergage.setUserAttribute("OpCo", call.argument<String>("OpCo"))

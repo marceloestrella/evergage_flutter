@@ -101,10 +101,10 @@ class _MyAppState extends State<MyApp> {
                     String platformVersion;
 
                     try {
-                      await _evergageFlutterPlugin.setZipCode('640000');
-                      platformVersion = 'todo bien setZipCode';
+                      await _evergageFlutterPlugin.setPostalCode('640000');
+                      platformVersion = 'todo bien setPostalCode';
                     } on PlatformException {
-                      platformVersion = 'Failed to setZipCode.';
+                      platformVersion = 'Failed to setPostalCode.';
                     } catch (e) {
                       platformVersion = e.toString();
                     }
@@ -113,7 +113,7 @@ class _MyAppState extends State<MyApp> {
                       _platformVersion = platformVersion;
                     });
                   },
-                  child: const Text("setZipCode")),
+                  child: const Text("setPostalCode")),
               ElevatedButton(
                   onPressed: () async {
                     String platformVersion;

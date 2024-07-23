@@ -12,8 +12,8 @@ class EvergageFlutter {
         .setUser(userId, email, firstName, lastName);
   }
 
-  Future<void> setZipCode(String zipCode) {
-    return EvergageFlutterPlatform.instance.setZipCode(zipCode);
+  Future<void> setPostalCode(String postalCode) {
+    return EvergageFlutterPlatform.instance.setPostalCode(postalCode);
   }
 
    Future<void> setOpCo(String opCo) {

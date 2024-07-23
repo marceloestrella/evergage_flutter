@@ -32,8 +32,8 @@ abstract class EvergageFlutterPlatform extends PlatformInterface {
     throw UnimplementedError('setUser() has not been implemented.');
   }
 
-  Future<void> setZipCode(String zipCode) {
-    throw UnimplementedError('setZipCode() has not been implemented.');
+  Future<void> setPostalCode(String postalCode) {
+    throw UnimplementedError('setPostalCode() has not been implemented.');
   }
 
   Future<void> setOpCo(String opCo) {
