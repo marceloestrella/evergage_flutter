@@ -13,3 +13,7 @@
 ## 0.0.4
 
 * A new method is added to set a user property (setOpCo)      
+
+## 0.0.4
+
+* property name change from zipCode to postalCode
