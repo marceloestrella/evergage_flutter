@@ -27,6 +27,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+    namespace 'mx.bnext.evergage_flutter'
     compileSdkVersion 31
 
     compileOptions {
