@@ -12,4 +12,8 @@
 
 ## 0.0.4
 
-* A new method is added to set a user property (setOpCo)      
+* A new method is added to set a user property (setOpCo)
+
+## 0.0.5
+
+* Android - Add namespace in build.gradle
